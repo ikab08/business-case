@@ -66,6 +66,108 @@
 
 	<section class="container">
 		<div class="row">
+			<form action="#" enctype="multipart-data">
+			<div class="searchdiv">
+				<div class="searchput">
+					<label class="lab">
+						<div class="lab1">
+							<div class="lab2">From</div>
+							<input type="" name="" class="put" placeholder="Enter here" required="">
+						</div>
+					</label>
+				</div>
+				<div class="sep"></div>
+				<div class="searchput">
+					<label class="lab">
+						<div class="lab1">
+							<div class="lab2">To</div>
+							<input type="" name="" class="put" placeholder="Enter here" required="">
+						</div>
+					</label>
+				</div>
+				<div class="sep"></div>
+				<div class="searchput">
+					<label class="lab">
+						<div class="lab1">
+							<div class="lab2">Departure</div>
+							<input type="date" name="" class="put" required="">
+						</div>
+					</label>
+				</div>
+				<div class="sep"></div>
+				<div class="searchput">
+					<label class="lab">
+						<div class="lab1">
+							<div class="lab2">Arrival</div>
+							<input type="date" name="" class="put" required="">
+						</div>
+					</label>
+				</div>
+				<div class="sep"></div>
+				<div class="searchput">
+					<label class="lab">
+						<div class="lab1">
+							<div class="lab2">Guests</div>
+							<input type="" name="" class="put" id="myBtn" placeholder="Add" required="">
+						</div>
+					</label>
+				</div>
+				<div class="searchbtn">
+					<button type="submit" class="btn btn-default btn-circle btn-xl sbtn"><i class="fa fa-search"></i></button>
+				</div>
+			</div>
+			</form>
+
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+				  <!-- Modal content -->
+				  <div class="modal-content">
+				    <!--span class="close">&times;</span-->
+				    <div class="dmer">
+				    	<div class="dfl">
+				    		<label>Adults</label> <br> 
+				    		<span class="spam">Over 13 years</span> 
+				    	</div>
+				    	<div class="dfi">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="minusA()"><i class="fa fa-minus"></i></button>
+				    		<input type="" name="" id="spadl" value="0">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="plusA();"><i class="fa fa-plus"></i></button>
+				    	</div>
+				    </div><hr>
+				    <div class="dmer">
+				    	<div class="dfl">
+				    		<label>Children</label> <br> 
+				    		<span class="spam">From 2 to 13 years</span> 
+				    	</div>
+				    	<div class="dfi">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="minusC()"><i class="fa fa-minus"></i></button>
+				    		<input type="" name="" id="spch" value="0">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="plusC()"><i class="fa fa-plus"></i></button>
+				    	</div>
+				    </div><hr>
+				    <div class="dmer">
+				    	<div class="dfl">
+				    		<label>Baby</label> <br> 
+				    		<span class="spam">Under 2 years</span> 
+				    	</div>
+				    	<div class="dfi">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="minusB()"><i class="fa fa-minus"></i></button>
+				    		<input type="" name="" id="spbab" value="0">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="plusB()"><i class="fa fa-plus"></i></button>
+				    	</div>
+				    </div>
+				    <div class="dmer">
+				    	<div class="dml"><a type="button" class="val" onclick="guest()"><i class="fa fa-check"></i></a></div>
+				    	<div class="dmi"><span class="close"><i class="fa fa-close"></i></span></div>
+				    </div>
+				  <br> 
+				  </div>
+				</div> 
+
+			
+		</div><br>
+
+		<div class="row">
 			<div class="col-md-6">
 				<div class="row">
 					<div class="col-xs-3">
@@ -233,6 +335,55 @@
 	</footer>
 
 <script type="text/javascript">	
+	function minusA(){
+		var rec = $('#spadl').val(); var rec = parseInt(rec);
+		if (rec==0){
+			$('#spadl').val(rec);
+		}else{
+			var inter = rec - 1;
+			$('#spadl').val(inter);
+		}
+	}
+	function plusA(){
+		var rec = $('#spadl').val(); var rec = parseInt(rec);
+		var inter = rec + 1;
+		$('#spadl').val(inter);
+	}
+	function minusC(){
+		var rec = $('#spch').val(); var rec = parseInt(rec);
+		if (rec==0){
+			$('#spch').val(rec); 
+		}else{
+			var inter = rec - 1;
+			$('#spch').val(inter);
+		}
+	}
+	function plusC(){
+		var rec = $('#spch').val(); var rec = parseInt(rec);
+		var inter = rec + 1;
+		$('#spch').val(inter);
+	}
+	function minusB(){
+		var rec = $('#spbab').val(); var rec = parseInt(rec);
+		if (rec==0){
+			$('#spbab').val(rec);
+		}else{
+			var inter = rec - 1;
+			$('#spbab').val(inter);
+		}
+	}
+	function plusB(){
+		var rec = $('#spbab').val(); var rec = parseInt(rec);
+		var inter = rec + 1;
+		$('#spbab').val(inter);
+	}
+	function guest(){
+		var r0 = $('#spadl').val();var r1 = $('#spch').val();var r2 = $('#spbab').val();
+		var z = parseInt(r0)+parseInt(r1)+parseInt(r2);
+		$('#myBtn').val(z);
+		modal.style.display = "none";
+	}
+
     function show(){
         $('#divid').toggle();
          var elt = $('#btnmore');
@@ -242,6 +393,7 @@
             $('#btnmore').val('More filter');
         }
     }
+
     //var d = new Date(); 
     var dt = $('#datid').val();
     var d = new Date(dt);
@@ -274,6 +426,33 @@
 
 	var ret = nj.concat(' ').concat(nm).concat(' ').concat(nd);
 	$('#sp3id').html(ret); $('#sp3id1').html(ret); $('#sp3id2').html(ret); $('#sp3id3').html(ret);
+
+	// Get the modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks on the button, open the modal
+	btn.onclick = function() {
+	  modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+	    modal.style.display = "none";
+	}
+
+} 
 </script>
 </body>
 
