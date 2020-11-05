@@ -1,0 +1,85 @@
+body {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #484848;
+    background-color: #fff;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}/*
+#test{
+    background-image: url('img/ban.jpg');
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+label{
+    margin-right: 15px;
+}*/
+hr{
+    width: 95% ;
+    font-weight: 25px;
+}
+input[type="text"]{
+    width: 100%;
+}
+#divres{
+    background-color: #f8f8f8;
+    padding-top: 2px;
+}
+.res{
+    width: 95%;
+    margin: auto;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    margin-top: 8px;
+    padding: 3px;
+    /*text-align: center;
+    padding: 51px 15px 40px;*/
+    /**/-webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05);
+}
+#idver{
+    padding-top: 25px;
+    color: rgb(0,136,0);
+    font-size: 22px;
+}
+em{
+    font-size: 8px;
+}
+#span,#span2{
+    padding: 0;
+}
+#span2{
+    padding-left: 2px;
+    border-left: 1px solid #e5e5e5;
+}
+.span3{
+    font-size: 10px; color: rgb(191,191,191);
+}
+footer{
+    text-align: center;
+}
+footer a {
+    margin-right: 15px;
+}
