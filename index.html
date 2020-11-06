@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>easyTrips | Home</title>
+	<title>Gozem | Home</title>
 	<link rel="icon" href="assets/img/favicon.ico">
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -27,11 +27,10 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="mlog" href="index.html"><img src="assets/img/logo.png" ></a>
+            <div class="verticalhorizontal"><a href="index.html"><img src="assets/img/glogo.png" ></a></div>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li id="active"><a href="index.html"> Home</a></li>
               <li><a href="#">Trip</a></li>
               <li><a href="#">Hotel</a></li>
               <li><a href="#">Holidays</a></li>
@@ -65,14 +64,14 @@
     </header>
 
 	<section class="container">
-		<div class="row">
-			<form action="#" enctype="multipart-data">
+		<div class="row hidden-xs hidden-sm">
+			<form action="#" enctype="multipart/form-data" id="form">
 			<div class="searchdiv">
 				<div class="searchput">
 					<label class="lab">
 						<div class="lab1">
 							<div class="lab2">From</div>
-							<input type="" name="" class="put" placeholder="Enter here" required="">
+							<input type="text" name="" class="put" placeholder="Eg: Cotonou" required="">
 						</div>
 					</label>
 				</div>
@@ -81,7 +80,7 @@
 					<label class="lab">
 						<div class="lab1">
 							<div class="lab2">To</div>
-							<input type="" name="" class="put" placeholder="Enter here" required="">
+							<input type="text" name="" class="put" placeholder="Eg: Lomé" required="">
 						</div>
 					</label>
 				</div>
@@ -89,7 +88,7 @@
 				<div class="searchput">
 					<label class="lab">
 						<div class="lab1">
-							<div class="lab2">Departure</div>
+							<div class="lab2">Depart date</div>
 							<input type="date" name="" class="put" required="">
 						</div>
 					</label>
@@ -98,7 +97,7 @@
 				<div class="searchput">
 					<label class="lab">
 						<div class="lab1">
-							<div class="lab2">Arrival</div>
+							<div class="lab2">Arrival date </div>
 							<input type="date" name="" class="put" required="">
 						</div>
 					</label>
@@ -108,7 +107,7 @@
 					<label class="lab">
 						<div class="lab1">
 							<div class="lab2">Guests</div>
-							<input type="" name="" class="put" id="myBtn" placeholder="Add" required="">
+							<input type="text" name="" class="put" id="myBtn" placeholder="Add" required="">
 						</div>
 					</label>
 				</div>
@@ -117,7 +116,32 @@
 				</div>
 			</div>
 			</form>
-
+		</div>
+		<div class="row visible-xs visible-sm">
+				<form action="#" enctype="multipart/form-data">
+					<div class="dcont">
+						<div class="d1">From</div> <div class="d2"><input type="text" name="" required="" placeholder="Eg: Cotonou"></div> 
+					</div>
+					<div class="dcont">
+						<div class="d1">To</div> <div class="d2"><input type="text" name="" required="" placeholder="Eg: Lomé"></div> 
+					</div>
+					<div class="dcont">
+						<div class="d1">Depart date</div> <div class="d2"><input type="date" name="" required=""></div> 
+					</div>
+					<div class="dcont">
+						<div class="d1">Arrival date</div> <div class="d2"><input type="date" name="" required=""></div> 
+					</div>
+					<div class="dcont">
+						<div class="d1">Guests</div> <div class="d2"><input type="text" name="" required="" id="myBtn1" placeholder="Add"></div> 
+					</div>
+					<div class="mrw">
+						<div id="fll">
+							<button type="submit" class="btn btn-default btn-md sbtn1"><i class="fa fa-search"></i> Search</button>
+						</div>						
+					</div>					
+				</form>
+		</div><br>
+			
 				<!-- The Modal -->
 				<div id="myModal" class="modal">
 				  <!-- Modal content -->
@@ -130,7 +154,7 @@
 				    	</div>
 				    	<div class="dfi">
 				    		<button type="button" class="btn btn-default btn-circle" onclick="minusA()"><i class="fa fa-minus"></i></button>
-				    		<input type="" name="" id="spadl" value="0">
+				    		<input type="text" name="" id="spadl" value="0">
 				    		<button type="button" class="btn btn-default btn-circle" onclick="plusA();"><i class="fa fa-plus"></i></button>
 				    	</div>
 				    </div><hr>
@@ -141,7 +165,7 @@
 				    	</div>
 				    	<div class="dfi">
 				    		<button type="button" class="btn btn-default btn-circle" onclick="minusC()"><i class="fa fa-minus"></i></button>
-				    		<input type="" name="" id="spch" value="0">
+				    		<input type="text" name="" id="spch" value="0">
 				    		<button type="button" class="btn btn-default btn-circle" onclick="plusC()"><i class="fa fa-plus"></i></button>
 				    	</div>
 				    </div><hr>
@@ -152,7 +176,7 @@
 				    	</div>
 				    	<div class="dfi">
 				    		<button type="button" class="btn btn-default btn-circle" onclick="minusB()"><i class="fa fa-minus"></i></button>
-				    		<input type="" name="" id="spbab" value="0">
+				    		<input type="text" name="" id="spbab" value="0">
 				    		<button type="button" class="btn btn-default btn-circle" onclick="plusB()"><i class="fa fa-plus"></i></button>
 				    	</div>
 				    </div>
@@ -163,17 +187,61 @@
 				  <br> 
 				  </div>
 				</div> 
+				<!-- The Modal2 -->
+				<div id="myModal1" class="modal1">
+				  <!-- Modal content -->
+				  <div class="modal1-content">
+				    <!--span class="close">&times;</span-->
+				    <div class="dmer">
+				    	<div class="dfll">
+				    		<label>Adults</label> <br> 
+				    		<span class="spam">Over 13 years</span> 
+				    	</div>
+				    	<div class="dfii">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="minsA()"><i class="fa fa-minus"></i></button>
+				    		<input type="text" name="" id="spad" value="0">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="plsA();"><i class="fa fa-plus"></i></button>
+				    	</div>
+				    </div><hr>
+				    <div class="dmer">
+				    	<div class="dfll">
+				    		<label>Children</label> <br> 
+				    		<span class="spam">From 2 to 13 years</span> 
+				    	</div>
+				    	<div class="dfii">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="minsC()"><i class="fa fa-minus"></i></button>
+				    		<input type="text" name="" id="spc" value="0">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="plsC()"><i class="fa fa-plus"></i></button>
+				    	</div>
+				    </div><hr>
+				    <div class="dmer">
+				    	<div class="dfll">
+				    		<label>Baby</label> <br> 
+				    		<span class="spam">Under 2 years</span> 
+				    	</div>
+				    	<div class="dfii">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="minsB()"><i class="fa fa-minus"></i></button>
+				    		<input type="text" name="" id="spba" value="0">
+				    		<button type="button" class="btn btn-default btn-circle" onclick="plsB()"><i class="fa fa-plus"></i></button>
+				    	</div>
+				    </div>
+				    <div class="dmer">
+				    	<div class="dml"><a type="button" class="val" onclick="guests()"><i class="fa fa-check"></i></a></div>
+				    	<div class="dmi"><span class="close1"><i class="fa fa-close"></i></span></div>
+				    </div>
+				  <br> 
+				  </div>
+				</div> 
+				<!-- End Modal -->
 
-			
-		</div><br>
 
 		<div class="row">
 			<div class="col-md-6">
 				<div class="row">
-					<div class="col-xs-3">
+					<div class="col-xs-2">
 						<label>Guests</label>
 					</div>
-					<div class="col-xs-6">
+					<div class="col-xs-4">
 						<select>
 							<option value="">-----</option>
 							<option value="1">1 Guests</option>
@@ -188,7 +256,7 @@
 							<option value="10">10 Guests</option>
 						</select> 
 					</div>
-					<div class="col-xs-3">
+					<div class="col-xs-6" style="text-align: right;">
 						<input type="button" id="btnmore" value="More filter" onclick="show()">
 					</div>
 				</div>
@@ -196,75 +264,75 @@
 				<div id="divid" style="display: none;">
 					<hr>
 					<div class="row">
-						<div class="col-md-3">
+						<div class="col-sm-2">
 							<label>Itinerary</label>
 						</div>
-						<div class="col-md-3">
-							<input type="text" name="" value="Singapore" readonly="">
+						<div class="col-sm-3 mcol">
+							<input type="text" id="inp" value="Singapore" readonly="">
 						</div>
-						<div class="col-md-3">
-							<input type="text" name="" value="Bangkok" readonly="">
+						<div class="col-sm-3 mcol">
+							<input type="text" id="inp" value="Bangkok" readonly="">
 						</div>
-						<div class="col-md-3">
-							<input type="date" name="" id="datid" value="2016-06-11" readonly="">
+						<div class="col-sm-4 mcol">
+							<input type="date" id="datid" value="2016-06-11" readonly="">
 						</div>
-					</div> <br>
+					</div>
 					<div class="row">
-						<div class="col-md-3">
+						<div class="col-sm-2">
 						</div>
-						<div class="col-md-3">
-							<input type="text" name="" value="Singapore" readonly="">
+						<div class="col-sm-3 mcol">
+							<input type="text" id="inp" value="Bangkok" readonly="">
 						</div>
-						<div class="col-md-3">
-							<input type="text" name="" value="Bangkok" readonly="">
+						<div class="col-sm-3 mcol">
+							<input type="text" id="inp" value="Phuket" readonly="">
 						</div>
-						<div class="col-md-3">
-							<input type="date" name="" value="2016-06-14" readonly="">
+						<div class="col-sm-4 mcol">
+							<input type="date" id="inp" value="2016-06-14" readonly="">
 						</div>
-					</div> <br>
+					</div>
 					<div class="row">
-						<div class="col-md-3">
+						<div class="col-sm-2">
 						</div>
-						<div class="col-md-3">
-							<input type="text" name="" value="Singapore" readonly="">
+						<div class="col-sm-3 mcol">
+							<input type="text" id="inp" value="Phuket" readonly="">
 						</div>
-						<div class="col-md-3">
-							<input type="text" name="" value="Bangkok" readonly="">
+						<div class="col-sm-3 mcol">
+							<input type="text" id="inp" value="Singapore" readonly="">
 						</div>
-						<div class="col-md-3">
-							<input type="date" name="" value="2016-06-18" readonly="">
+						<div class="col-sm-4 mcol">
+							<input type="date" id="inp" value="2016-06-18" readonly="">
 						</div>
-					</div> <br>					
+					</div>					
 				</div><br>
 
 				<div id="divres">
 					<div class="row res">
-						<div class="col-md-2" id="idver">
+						<div class="col-sm-2" id="idver">
 							$180
 						</div>
-						<div class="col-md-10">
-							<div class="row">
-								<div class="col-md-3" id="span">
+						<div class="col-sm-10">
+							<div class="row" id="z">
+								<div class="col-sm-3 col-xs-3" id="span">
 									<button type="button" class="btn btn-danger btn-circle"><em>Air Asia</em></button> Air Asia 
 								</div>
-								<div class="col-md-4" id="span2">
+								<div class="col-sm-4 col-xs-4" id="span2">
 									10:10pm - 12:35pm <br>
 									<span id="sp3id" class="span3"></span>
 								</div>
-								<div class="col-md-5" id="span2">
+								<div class="col-sm-5 col-xs-5" id="span2">
 									2h 25 min <br>
 									<span class="span3"> Singapore (SIN) to Bangkok (DMK)</span>
 								</div>
 							</div><br>
-							<div class="row">
-								<div class="col-md-3" id="span">
+							<div class="row" id="z1">
+								<div class="col-sm-3 col-xs-3" id="span">
 									<button type="button" class="btn btn-danger btn-circle"><em>Air Asia</em></button> Air Asia 
 								</div>
-								<div class="col-md-4" id="span2">
+								<div class="col-sm-4 col-xs-4" id="span2">
 									10:10pm - 12:35pm <br>
 									<span id="sp3id1" class="span3"></span>
 								</div>
-								<div class="col-md-5" id="span2">
+								<div class="col-sm-5 col-xs-5" id="span2">
 									2h 25 min <br>
 									<span class="span3"> Singapore (SIN) to Bangkok (DMK)</span>
 								</div>
@@ -273,32 +341,32 @@
 					</div>
 
 					<div class="row res">
-						<div class="col-md-2" id="idver">
+						<div class="col-sm-2" id="idver">
 							$180
 						</div>
-						<div class="col-md-10">
-							<div class="row">
-								<div class="col-md-3" id="span">
+						<div class="col-sm-10">
+							<div class="row" id="z2">
+								<div class="col-sm-3 col-xs-3" id="span">
 									<button type="button" class="btn btn-danger btn-circle"><em>Air Asia</em></button> Air Asia 
 								</div>
-								<div class="col-md-4" id="span2">
+								<div class="col-sm-4 col-xs-4" id="span2">
 									10:10pm - 12:35pm <br>
 									<span id="sp3id2" class="span3"></span>
 								</div>
-								<div class="col-md-5" id="span2">
+								<div class="col-sm-5 col-xs-5" id="span2">
 									2h 25 min <br>
 									<span class="span3"> Singapore (SIN) to Bangkok (DMK)</span>
 								</div>
 							</div><br>
-							<div class="row">
-								<div class="col-md-3" id="span">
+							<div class="row" id="z3">
+								<div class="col-sm-3 col-xs-3" id="span">
 									<button type="button" class="btn btn-danger btn-circle"><em>Air Asia</em></button> Air Asia 
 								</div>
-								<div class="col-md-4" id="span2">
+								<div class="col-sm-4 col-xs-4" id="span2">
 									10:10pm - 12:35pm <br>
 									<span id="sp3id3" class="span3"></span>
 								</div>
-								<div class="col-md-5" id="span2">
+								<div class="col-sm-5 col-xs-5" id="span2">
 									2h 25 min <br>
 									<span class="span3"> Singapore (SIN) to Bangkok (DMK)</span>
 								</div>
@@ -318,7 +386,7 @@
 			<hr>
 			<div class="row">
 				<div class="col-md-4">
-					© 2020 <a href="index.html">easyTrips</a>
+					© 2020 <a href="index.html">Gozem</a>
 					All rights reserved
 				</div>
 				<div class="col-md-4">
@@ -380,8 +448,66 @@
 	function guest(){
 		var r0 = $('#spadl').val();var r1 = $('#spch').val();var r2 = $('#spbab').val();
 		var z = parseInt(r0)+parseInt(r1)+parseInt(r2);
-		$('#myBtn').val(z);
+		if (z==0){
+			$('#myBtn').val();
+		}else{
+			$('#myBtn').val(z);
+		}
 		modal.style.display = "none";
+	}
+	function minsA(){
+		var rec = $('#spad').val(); var rec = parseInt(rec);
+		if (rec==0){
+			$('#spad').val(rec);
+		}else{
+			var inter = rec - 1;
+			$('#spad').val(inter);
+		}
+	}
+	function plsA(){
+		var rec = $('#spad').val(); var rec = parseInt(rec);
+		var inter = rec + 1;
+		$('#spad').val(inter);
+	}
+	function minsC(){
+		var rec = $('#spc').val(); var rec = parseInt(rec);
+		if (rec==0){
+			$('#spc').val(rec); 
+		}else{
+			var inter = rec - 1;
+			$('#spc').val(inter);
+		}
+	}
+	function plsC(){
+		var rec = $('#spc').val(); var rec = parseInt(rec);
+		var inter = rec + 1;
+		$('#spc').val(inter);
+	}
+	function minsB(){
+		var rec = $('#spba').val(); var rec = parseInt(rec);
+		if (rec==0){
+			$('#spba').val(rec);
+		}else{
+			var inter = rec - 1;
+			$('#spba').val(inter);
+		}
+	}
+	function plsB(){
+		var rec = $('#spba').val(); var rec = parseInt(rec);
+		var inter = rec + 1;
+		$('#spba').val(inter);
+	}
+	function guests(){
+		var modal1 = document.getElementById("myModal1");
+		var r0 = $('#spad').val();var r1 = $('#spc').val();var r2 = $('#spba').val();
+		var z = parseInt(r0)+parseInt(r1)+parseInt(r2);
+		if (z==0){
+			$('#myBtn1').val();
+		}else{
+			$('#myBtn1').val(z);
+		}
+		
+		modal1.style.display = "none";
 	}
 
     function show(){
@@ -441,6 +567,10 @@
 	  modal.style.display = "block";
 	}
 
+	btn.onfocus = function() {
+	  modal.style.display = "block";
+	}
+
 	// When the user clicks on <span> (x), close the modal
 	span.onclick = function() {
 	  modal.style.display = "none";
@@ -450,6 +580,24 @@
 	window.onclick = function(event) {
 	  if (event.target == modal) {
 	    modal.style.display = "none";
+	}
+
+	var modal1 = document.getElementById("myModal1");
+	var btn1 = document.getElementById("myBtn1");
+	var span1 = document.getElementsByClassName("close1")[0];
+	btn1.onclick = function() {
+	  modal1.style.display = "block";
+	}
+	btn1.onfocus = function() {
+	  modal1.style.display = "block";
+	}
+	span1.onclick = function() {
+	  modal1.style.display = "none";
+	}
+	window.onclick = function(event) {
+	  if (event.target == modal1) {
+	    modal1.style.display = "none";
+	  }
 	}
 
 } 
